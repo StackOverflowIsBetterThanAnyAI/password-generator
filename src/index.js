@@ -1,13 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import AppIndex from './AppIndex/AppIndex'
+import Index from './components/Index/Index'
 import reportWebVitals from './reportWebVitals'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
     <React.StrictMode>
-        <AppIndex />
+        <Index />
     </React.StrictMode>
 )
 

@@ -4,9 +4,9 @@ import {
     Route,
     Redirect,
 } from 'react-router-dom'
-import { HomePage } from './pages/HomePage'
-import { PasswordGenerator } from './pages/PasswordGenerator'
-import { NotFoundPage } from './pages/NotFoundPage'
+import { HomePage } from './HomePage/HomePage'
+import { PasswordGenerator } from './PasswordGenerator/PasswordGenerator'
+import { NotFoundPage } from './NotFoundPage/NotFoundPage'
 import React from 'react'
 
 export const Routes = () => {
