@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import Index from './components/Index/Index'
 import reportWebVitals from './reportWebVitals'
+import './fonts/Poppins-Medium.ttf'
+import './fonts/Poppins-Regular.ttf'
+import './fonts/Poppins-Bold.ttf'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
