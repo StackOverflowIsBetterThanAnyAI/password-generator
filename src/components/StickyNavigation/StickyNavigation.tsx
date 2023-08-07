@@ -16,7 +16,11 @@ const StickyNavigation = () => {
                     justifyContent: 'space-between',
                 }}
             >
-                <div>Password Generator</div>
+                <div>
+                    <span>
+                        <Link to="/">Password Generator</Link>
+                    </span>
+                </div>
                 <div>
                     <span style={{ marginRight: '20px' }}>
                         <Link to="/pages/password-generator">

@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom'
 import { HomePage } from './HomePage/HomePage'
 import { PasswordGenerator } from './PasswordGenerator/PasswordGenerator'
+import { PasswordStorage } from './PasswordStorage/PasswordStorage'
 import { NotFoundPage } from './NotFoundPage/NotFoundPage'
 import React from 'react'
 
@@ -21,6 +22,9 @@ export const Routes = () => {
                 </Route>
                 <Route path="/pages/password-generator">
                     <PasswordGenerator />
+                </Route>
+                <Route path="/pages/password-storage">
+                    <PasswordStorage />
                 </Route>
                 <Route>
                     <NotFoundPage />
