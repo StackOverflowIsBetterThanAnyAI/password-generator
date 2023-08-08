@@ -1,6 +1,7 @@
 import React from 'react'
 import Headroom from 'react-headroom'
 import { Link } from 'react-router-dom'
+import favicon from './../../images/favicon.png'
 
 const StickyNavigation = () => {
     return (
@@ -9,20 +10,25 @@ const StickyNavigation = () => {
                 style={{
                     display: 'flex',
                     backgroundColor: '#a8d9ec',
-                    fontSize: '36px',
-                    padding: '10px 20px',
-                    marginBottom: '20px',
-                    columnGap: '20px',
+                    fontSize: '3vw',
+                    padding: '0.75vw 1.5vw',
                     justifyContent: 'space-between',
                 }}
             >
                 <div>
                     <span>
-                        <Link to="/">Password Generator</Link>
+                        <Link to="/">
+                            <img
+                                src={favicon}
+                                height="50vw"
+                                style={{ paddingRight: '1vw' }}
+                            ></img>
+                            Password Generator
+                        </Link>
                     </span>
                 </div>
                 <div>
-                    <span style={{ marginRight: '20px' }}>
+                    <span style={{ marginRight: '1.5vw' }}>
                         <Link to="/pages/password-generator">
                             generate Password
                         </Link>
