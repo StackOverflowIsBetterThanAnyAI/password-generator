@@ -10,7 +10,7 @@ const StickyNavigation = () => {
                 style={{
                     backgroundColor: '#a8d9ec',
                     fontSize: '3vw',
-                    padding: '1.5vw',
+                    padding: '1.5vw 1.5vw 1vw 1.5vw',
                     position: 'relative',
                 }}
             >

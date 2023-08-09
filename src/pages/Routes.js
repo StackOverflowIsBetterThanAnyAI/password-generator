@@ -5,8 +5,8 @@ import {
     Redirect,
 } from 'react-router-dom'
 import { HomePage } from './HomePage/HomePage'
-import { PasswordGenerator } from './PasswordGenerator/PasswordGenerator'
-import { PasswordStorage } from './PasswordStorage/PasswordStorage'
+import { PasswordGeneratorPage } from './PasswordGeneratorPage/PasswordGeneratorPage'
+import { PasswordStoragePage } from './PasswordStoragePage/PasswordStoragePage'
 import { NotFoundPage } from './NotFoundPage/NotFoundPage'
 import React from 'react'
 
@@ -21,10 +21,10 @@ export const Routes = () => {
                     <Redirect to="/" />
                 </Route>
                 <Route path="/pages/password-generator">
-                    <PasswordGenerator />
+                    <PasswordGeneratorPage />
                 </Route>
                 <Route path="/pages/password-storage">
-                    <PasswordStorage />
+                    <PasswordStoragePage />
                 </Route>
                 <Route>
                     <NotFoundPage />

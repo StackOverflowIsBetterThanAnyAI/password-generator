@@ -1,11 +1,12 @@
 import React from 'react'
 import StickyNavigation from '../../components/StickyNavigation/StickyNavigation'
+import PasswordGenerator from '../../components/PasswordGenerator/PasswordGenerator'
 
-export const PasswordStorage = () => {
+export const PasswordGeneratorPage = () => {
     return (
         <>
             <StickyNavigation />
-            <h1>Password Storage</h1>
+            <PasswordGenerator />
         </>
     )
 }
