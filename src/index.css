@@ -3,22 +3,27 @@ body {
     font-family: 'Poppins-Regular';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    color: rgb(12, 12, 12);
 }
 
 a:link {
     text-decoration: none;
 }
-
 a:visited {
-    color: black;
+    color: rgb(12, 12, 12);
 }
-
 a:hover {
-    color: red;
+    color: rgba(12, 12, 12, 0.5);
+}
+a:active {
+    color: rgba(12, 12, 12, 0.15);
 }
 
-a:active {
-    color: green;
+#stickynavigation-favicon:hover {
+    opacity: 0.5;
+}
+#stickynavigation-favicon:active {
+    opacity: 0.15;
 }
 
 @font-face {

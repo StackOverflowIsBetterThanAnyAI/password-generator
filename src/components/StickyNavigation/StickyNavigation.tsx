@@ -17,14 +17,15 @@ const StickyNavigation = () => {
                 <span style={{ paddingRight: '10vw', position: 'relative' }}>
                     <Link to="/">
                         <img
+                            id="stickynavigation-favicon"
                             src={favicon}
-                            height="50vw"
+                            width="10%"
                             style={{
                                 position: 'absolute',
                                 bottom: 0,
                             }}
                         ></img>
-                        <span style={{ paddingLeft: '5vw' }}>
+                        <span style={{ paddingLeft: '6vw' }}>
                             Password Generator
                         </span>
                     </Link>
