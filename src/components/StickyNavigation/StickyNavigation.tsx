@@ -8,37 +8,33 @@ const StickyNavigation = () => {
         <Headroom>
             <div
                 style={{
-                    display: 'flex',
                     backgroundColor: '#a8d9ec',
                     fontSize: '3vw',
-                    padding: '0.75vw 1.5vw',
-                    justifyContent: 'space-between',
+                    padding: '1.5vw',
+                    position: 'relative',
                 }}
             >
-                <div>
-                    <span>
-                        <Link to="/">
-                            <img
-                                src={favicon}
-                                height="50vw"
-                                style={{ paddingRight: '1vw' }}
-                            ></img>
+                <span style={{ paddingRight: '10vw', position: 'relative' }}>
+                    <Link to="/">
+                        <img
+                            src={favicon}
+                            height="50vw"
+                            style={{
+                                position: 'absolute',
+                                bottom: 0,
+                            }}
+                        ></img>
+                        <span style={{ paddingLeft: '5vw' }}>
                             Password Generator
-                        </Link>
-                    </span>
-                </div>
-                <div>
-                    <span style={{ marginRight: '1.5vw' }}>
-                        <Link to="/pages/password-generator">
-                            generate Password
-                        </Link>
-                    </span>
-                    <span>
-                        <Link to="/pages/password-storage">
-                            stored Passwords
-                        </Link>
-                    </span>
-                </div>
+                        </span>
+                    </Link>
+                </span>
+                <span style={{ paddingRight: '1.5vw' }}>
+                    <Link to="/pages/password-generator">Generator</Link>
+                </span>
+                <span>
+                    <Link to="/pages/password-storage">Storage</Link>
+                </span>
             </div>
         </Headroom>
     )
