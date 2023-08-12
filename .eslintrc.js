@@ -25,5 +25,9 @@ module.exports = {
             version: 'detect',
         },
     },
-    rules: {},
+    rules: {
+        'react/jsx-uses-react': 'error',
+        'react/jsx-uses-vars': 'error',
+        'no-undef': 'warn',
+    },
 }
