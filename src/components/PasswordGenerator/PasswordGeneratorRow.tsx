@@ -7,6 +7,12 @@ type Props = {
 }
 
 const PasswordGeneratorRow = ({ id, text, type }: Props) => {
+    const [inputNumber, setInputNumber] = useState<number>(8)
+
+    const onChangeNumber = (e: any) => {
+        setInputNumber(e.target.value)
+    }
+
     const [checked, setChecked] = useState(false)
     const [value, setValue] = useState(false)
 
@@ -22,7 +28,14 @@ const PasswordGeneratorRow = ({ id, text, type }: Props) => {
         <div className="menu">
             <label>{text}</label>
             {type === 'number' ? (
-                <input id={id} className="number" type="number" min="8" />
+                <input
+                    id={id}
+                    className="number"
+                    type="number"
+                    min="8"
+                    value={inputNumber}
+                    onChange={onChangeNumber}
+                />
             ) : (
                 <input
                     id={id}
