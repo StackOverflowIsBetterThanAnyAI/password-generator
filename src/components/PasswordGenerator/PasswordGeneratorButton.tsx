@@ -1,38 +1,32 @@
 import React, { useState } from 'react'
 
-type Props = {
-    buttonType: 'output' | 'generate'
-}
-
-const PasswordGeneratorButton = ({ buttonType }: Props) => {
+const PasswordGeneratorButton = ({ children }: any) => {
     const [output, setOutput] = useState('Password')
 
     return (
         <>
-            {buttonType === 'output' ? (
-                <div className="output-container">
-                    <div className="output" id="output">
-                        {output}
-                    </div>
-                    <div className="copy-button">
-                        <input
-                            id="copy"
-                            type="button"
-                            value="Copy To Clipboard"
-                            onClick={() => setOutput('jojojo')}
-                        />
-                    </div>
+            <div className="output-container">
+                <div className="output" id="output">
+                    {output}
                 </div>
-            ) : (
-                <div className="generate">
+                <div className="copy-button">
                     <input
-                        id="button"
+                        id="copy"
                         type="button"
-                        value="Generate Password"
-                        onClick={() => console.log('returnPassword')}
+                        value="Copy To Clipboard"
+                        onClick={() => navigator.clipboard.writeText(output)}
                     />
                 </div>
-            )}
+            </div>
+            {children}
+            <div className="generate-button">
+                <input
+                    id="generate"
+                    type="button"
+                    value="Generate Password"
+                    onClick={() => setOutput('returnPassword')}
+                />
+            </div>
         </>
     )
 }
