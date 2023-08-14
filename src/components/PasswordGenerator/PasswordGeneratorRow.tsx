@@ -1,12 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-type Props = {
-    id: string
-    text?: string
-    type: 'checkbox' | 'error' | 'number'
-}
-
-const PasswordGeneratorRow = ({ id, text, type }: Props) => {
+const PasswordGeneratorRow = () => {
     const [inputNumber, setInputNumber] = useState<number>(8)
     const onChangeNumber = (e: any) => {
         setInputNumber(e.target.value)
@@ -19,6 +13,9 @@ const PasswordGeneratorRow = ({ id, text, type }: Props) => {
             setErrorText(
                 'Your Password has to have a length of at least 8 characters.'
             )
+        else {
+            setErrorText('no Error')
+        }
     }, [inputNumber])
 
     const [checked, setChecked] = useState(false)
@@ -33,32 +30,55 @@ const PasswordGeneratorRow = ({ id, text, type }: Props) => {
     console.log('value', value)
 
     return (
-        <div className="menu">
-            <label>{text}</label>
-            {(type === 'error' && (
-                <span id={id} className="error">
-                    {errorText}
-                </span>
-            )) ||
-                (type === 'checkbox' && (
-                    <input
-                        id={id}
-                        className="checkbox"
-                        type="checkbox"
-                        checked={checked}
-                        onChange={() => setChecked(!checked)}
-                    />
-                )) || (
-                    <input
-                        id={id}
-                        className="number"
-                        type="number"
-                        min="8"
-                        value={inputNumber}
-                        onChange={onChangeNumber}
-                    />
-                )}
-        </div>
+        <>
+            <div className="menu">
+                <label>Password Length</label>
+                <input
+                    className="number"
+                    type="number"
+                    min="8"
+                    value={inputNumber}
+                    onChange={onChangeNumber}
+                />
+            </div>
+            <div className="menu">
+                <label>Contains Uppercase Letters</label>
+                <input
+                    className="checkbox"
+                    type="checkbox"
+                    checked={checked}
+                    onChange={() => setChecked(!checked)}
+                />
+            </div>
+            <div className="menu">
+                <label>Contains Lowercase Letters</label>
+                <input
+                    className="checkbox"
+                    type="checkbox"
+                    checked={checked}
+                    onChange={() => setChecked(!checked)}
+                />
+            </div>
+            <div className="menu">
+                <label>Contains Numbers</label>
+                <input
+                    className="checkbox"
+                    type="checkbox"
+                    checked={checked}
+                    onChange={() => setChecked(!checked)}
+                />
+            </div>
+            <div className="menu">
+                <label>Contains Symbols</label>
+                <input
+                    className="checkbox"
+                    type="checkbox"
+                    checked={checked}
+                    onChange={() => setChecked(!checked)}
+                />
+            </div>
+            <span className="error">{errorText}</span>
+        </>
     )
 }
 
