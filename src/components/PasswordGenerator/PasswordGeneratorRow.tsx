@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import PasswordGeneratorRowItem from './PasswordGeneratorRowItem'
 
 const PasswordGeneratorRow = () => {
@@ -11,7 +11,6 @@ const PasswordGeneratorRow = () => {
     // value for error text
     const [errorText, setErrorText] = useState<string>('no error')
     useEffect(() => {
-        console.log(inputNumber < 8, 'inputnumber < 8')
         if (inputNumber < 8)
             setErrorText(
                 'Your Password has to have a length of at least 8 characters.'
@@ -22,27 +21,36 @@ const PasswordGeneratorRow = () => {
     }, [inputNumber])
 
     // value for checkbox items
-    const [rowItems, setRowItems] = useState([
+    const rowItems = useRef([
         { id: 'uppercase', checked: true, label: 'Contains Uppercase Letters' },
         { id: 'lowercase', checked: true, label: 'Contains Lowercase Letters' },
         { id: 'numbers', checked: true, label: 'Contains Numbers' },
         { id: 'symbols', checked: true, label: 'Contains Symbols' },
     ])
 
+    const checkedCounter = useRef<number>(4)
+
     const handleRowItemChange = (id: string) => {
-        const updatedRowItems = rowItems.map((rowItem) =>
+        const updatedRowItems = rowItems.current.map((rowItem) =>
             rowItem.id === id
                 ? { ...rowItem, checked: !rowItem.checked }
                 : rowItem
         )
-        setRowItems(updatedRowItems)
+        console.log(updatedRowItems)
+        rowItems.current = updatedRowItems
+        checkedCounter.current = rowItems.current.filter(
+            (rowItem) => rowItem.checked === true
+        ).length
+        console.log(checkedCounter.current, 'hansi')
     }
 
+    // working perfectly fine btw, just the checkbox is not updating - checkedCounter is synchronous again :DDD
+
     // Find the item with id "uppercase"
-    const uppercaseItem = rowItems.find((item) => item.id === 'uppercase')
+    /*const uppercaseItem = rowItems.find((item) => item.id === 'uppercase')
     const uppercaseChecked = uppercaseItem ? uppercaseItem.checked : false
 
-    console.log(uppercaseChecked)
+    console.log(uppercaseChecked)*/
 
     return (
         <>
@@ -57,7 +65,7 @@ const PasswordGeneratorRow = () => {
                 />
             </div>
             <div className="menu">
-                {rowItems.map((rowItem) => (
+                {rowItems.current.map((rowItem) => (
                     <div className="menu" key={rowItem.id}>
                         <label>{rowItem.label}</label>
                         <PasswordGeneratorRowItem
