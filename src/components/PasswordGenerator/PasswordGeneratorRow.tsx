@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react'
+import PasswordGeneratorRowItem from './PasswordGeneratorRowItem'
 
 const PasswordGeneratorRow = () => {
+    // value for password length
     const [inputNumber, setInputNumber] = useState<number>(8)
     const onChangeNumber = (e: any) => {
         setInputNumber(e.target.value)
     }
 
+    // value for error text
     const [errorText, setErrorText] = useState<string>('no error')
     useEffect(() => {
         console.log(inputNumber < 8, 'inputnumber < 8')
@@ -18,16 +21,28 @@ const PasswordGeneratorRow = () => {
         }
     }, [inputNumber])
 
-    const [checked, setChecked] = useState(false)
-    const [value, setValue] = useState(false)
+    // value for checkbox items
+    const [rowItems, setRowItems] = useState([
+        { id: 'uppercase', checked: true, label: 'Contains Uppercase Letters' },
+        { id: 'lowercase', checked: true, label: 'Contains Lowercase Letters' },
+        { id: 'numbers', checked: true, label: 'Contains Numbers' },
+        { id: 'symbols', checked: true, label: 'Contains Symbols' },
+    ])
 
-    // for password calculations
-    useEffect(() => {
-        if (checked) setValue(true)
-        else setValue(false)
-    })
+    const handleRowItemChange = (id: string) => {
+        const updatedRowItems = rowItems.map((rowItem) =>
+            rowItem.id === id
+                ? { ...rowItem, checked: !rowItem.checked }
+                : rowItem
+        )
+        setRowItems(updatedRowItems)
+    }
 
-    console.log('value', value)
+    // Find the item with id "uppercase"
+    const uppercaseItem = rowItems.find((item) => item.id === 'uppercase')
+    const uppercaseChecked = uppercaseItem ? uppercaseItem.checked : false
+
+    console.log(uppercaseChecked)
 
     return (
         <>
@@ -42,40 +57,17 @@ const PasswordGeneratorRow = () => {
                 />
             </div>
             <div className="menu">
-                <label>Contains Uppercase Letters</label>
-                <input
-                    className="checkbox"
-                    type="checkbox"
-                    checked={checked}
-                    onChange={() => setChecked(!checked)}
-                />
-            </div>
-            <div className="menu">
-                <label>Contains Lowercase Letters</label>
-                <input
-                    className="checkbox"
-                    type="checkbox"
-                    checked={checked}
-                    onChange={() => setChecked(!checked)}
-                />
-            </div>
-            <div className="menu">
-                <label>Contains Numbers</label>
-                <input
-                    className="checkbox"
-                    type="checkbox"
-                    checked={checked}
-                    onChange={() => setChecked(!checked)}
-                />
-            </div>
-            <div className="menu">
-                <label>Contains Symbols</label>
-                <input
-                    className="checkbox"
-                    type="checkbox"
-                    checked={checked}
-                    onChange={() => setChecked(!checked)}
-                />
+                {rowItems.map((rowItem) => (
+                    <div className="menu" key={rowItem.id}>
+                        <label>{rowItem.label}</label>
+                        <PasswordGeneratorRowItem
+                            key={rowItem.id}
+                            id={rowItem.id}
+                            checked={rowItem.checked}
+                            setChecked={handleRowItemChange}
+                        />
+                    </div>
+                ))}
             </div>
             <span className="error">{errorText}</span>
         </>
