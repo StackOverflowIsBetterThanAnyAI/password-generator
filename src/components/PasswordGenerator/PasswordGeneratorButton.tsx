@@ -3,6 +3,10 @@ import React, { useState } from 'react'
 const PasswordGeneratorButton = ({ children }: any) => {
     const [output, setOutput] = useState('Password')
 
+    const generatePassword = () => {
+        setOutput('password has been generated')
+    }
+
     return (
         <>
             <div className="output-container">
@@ -24,7 +28,7 @@ const PasswordGeneratorButton = ({ children }: any) => {
                     id="generate"
                     type="button"
                     value="Generate Password"
-                    onClick={() => setOutput('returnPassword')}
+                    onClick={generatePassword}
                 />
             </div>
         </>

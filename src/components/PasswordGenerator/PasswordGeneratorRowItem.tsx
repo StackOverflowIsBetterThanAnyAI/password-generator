@@ -1,12 +1,11 @@
 import React from 'react'
 
-const PasswordGeneratorRowItem = ({ id, checked, setChecked }: any) => {
+const PasswordGeneratorRowItem = ({ id, setChecked }: any) => {
     return (
         <input
             className="checkbox"
             type="checkbox"
-            checked={checked}
-            onChange={() => setChecked(id, !checked)}
+            onChange={() => setChecked(id)}
         />
     )
 }
