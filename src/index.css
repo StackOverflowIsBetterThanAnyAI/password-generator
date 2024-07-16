@@ -1,29 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     margin: 0;
     font-family: 'Poppins-Regular';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: rgb(12, 12, 12);
-}
-
-a:link {
-    text-decoration: none;
-}
-a:visited {
-    color: rgb(12, 12, 12);
-}
-a:hover {
-    color: rgba(12, 12, 12, 0.5);
-}
-a:active {
-    color: rgba(12, 12, 12, 0.15);
-}
-
-#stickynavigation-favicon:hover {
-    opacity: 0.5;
-}
-#stickynavigation-favicon:active {
-    opacity: 0.15;
 }
 
 @font-face {

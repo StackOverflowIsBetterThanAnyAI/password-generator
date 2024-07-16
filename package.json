@@ -41,7 +41,6 @@
         "eslint": "^8.45.0",
         "eslint-config-prettier": "^8.8.0",
         "eslint-plugin-react": "^7.33.1",
-        "prettier": "^3.0.0",
-        "react-router-dom": "^5.3.4"
+        "prettier": "^3.0.0"
     }
 }
