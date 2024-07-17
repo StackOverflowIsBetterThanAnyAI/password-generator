@@ -1,15 +1,16 @@
 {
     "name": "Password Generator",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "manifest_version": 3,
     "author": "Michael Münzenhofer",
+    "description": "Generate a new password with ease.",
     "icons": {
         "16": "favicon.ico",
         "128": "favicon.ico"
     },
     "action": {
         "default_popup": "index.html",
-        "default_title": "Passowrd Generator",
+        "default_title": "Password Generator",
         "default_icon": {
             "16": "favicon.ico"
         }

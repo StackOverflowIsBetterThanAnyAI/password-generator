@@ -1,0 +1,52 @@
+@media screen and (max-width: 544px) {
+    .stickyNavigation {
+        padding: 8px;
+    }
+
+    .stickyNavigationContent {
+        gap: 16px;
+    }
+
+    .stickyNavigationContent img {
+        width: calc(min(36px, 14vw));
+        height: calc(min(36px, 14vw));
+    }
+
+    h1 {
+        font-size: calc(min(24px, 8vw));
+    }
+}
+
+@media screen and (min-width: 544px) {
+    .stickyNavigation {
+        padding: calc(min(18px, 2vw));
+    }
+
+    .stickyNavigationContent {
+        gap: calc(min(18px, 4vw));
+    }
+
+    .stickyNavigationContent img {
+        width: 36px;
+        height: 36px;
+    }
+
+    h1 {
+        font-size: calc(min(28px, 10vw));
+    }
+}
+
+.stickyNavigation {
+    display: flex;
+    border-bottom: 2px solid rgb(239, 232, 232);
+    background-color: rgb(34, 34, 34);
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.stickyNavigationContent {
+    display: flex;
+    align-items: center;
+    margin-right: 12px;
+}
