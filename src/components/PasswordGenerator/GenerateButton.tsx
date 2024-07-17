@@ -66,13 +66,19 @@ const GenerateButton = () => {
         ...lowercaseItems,
         ...numberItems,
         ...symbolItems,
-    ]
+    ].sort(() => 0.5 - Math.random())
 
     const generatePassword = () => {
         let password = ''
 
+        const getRandomIndex = (max: number) => {
+            const array = new Uint32Array(1)
+            window.crypto.getRandomValues(array)
+            return array[0] % max
+        }
+
         for (let i = 0; i < passwordLength; i++) {
-            password += allItems[Math.floor(Math.random() * allItems.length)]
+            password += allItems[getRandomIndex(allItems.length)]
         }
 
         const hasUppercase = passwordCharacters.uppercase
