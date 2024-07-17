@@ -85,7 +85,7 @@ const GenerateButton = () => {
             ? /\d/.test(password)
             : true
         const hasSymbols = passwordCharacters.symbols
-            ? /[!"§$%&/()=?{[\]}\\@€*+~'#<>|,;.:-_]/.test(password)
+            ? /[!"§$%&/()=?{[\]}\\@€*+~'#<>|,;.:\-_]/.test(password)
             : true
 
         if (hasUppercase && hasLowercase && hasNumbers && hasSymbols) {
