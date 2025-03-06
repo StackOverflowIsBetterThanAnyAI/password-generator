@@ -19,7 +19,7 @@
 
 @media screen and (min-width: 544px) {
     .stickyNavigation {
-        padding: calc(min(18px, 2vw));
+        padding: calc(min(16px, 1vw));
     }
 
     .stickyNavigationContent {
@@ -38,7 +38,7 @@
 
 .stickyNavigation {
     display: flex;
-    border-bottom: 2px solid rgb(239, 232, 232);
+    box-shadow: 0px 0px 16px rgba(239, 232, 232, 0.25);
     background-color: rgb(34, 34, 34);
     position: fixed;
     top: 0;
