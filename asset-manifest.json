@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/password-generator/static/css/main.0582f3c6.css",
-    "main.js": "/password-generator/static/js/main.1e012d68.js",
+    "main.css": "/password-generator/static/css/main.f6fb23e3.css",
+    "main.js": "/password-generator/static/js/main.b91fccd5.js",
     "static/media/Poppins-Regular.ttf": "/password-generator/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
     "static/media/Poppins-Medium.ttf": "/password-generator/static/media/Poppins-Medium.673ed42382ab264e0bf5.ttf",
     "static/media/Poppins-Bold.ttf": "/password-generator/static/media/Poppins-Bold.cdb29a5d7ccf57ff05a3.ttf",
     "static/media/favicon.png": "/password-generator/static/media/favicon.41141b93129ea62fee11.png",
     "index.html": "/password-generator/index.html",
-    "main.0582f3c6.css.map": "/password-generator/static/css/main.0582f3c6.css.map",
-    "main.1e012d68.js.map": "/password-generator/static/js/main.1e012d68.js.map"
+    "main.f6fb23e3.css.map": "/password-generator/static/css/main.f6fb23e3.css.map",
+    "main.b91fccd5.js.map": "/password-generator/static/js/main.b91fccd5.js.map"
   },
   "entrypoints": [
-    "static/css/main.0582f3c6.css",
-    "static/js/main.1e012d68.js"
+    "static/css/main.f6fb23e3.css",
+    "static/js/main.b91fccd5.js"
   ]
 }
