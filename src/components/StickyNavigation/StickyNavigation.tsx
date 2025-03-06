@@ -5,7 +5,7 @@ import './StickyNavigation.css'
 const StickyNavigation = () => {
     return (
         <nav className="stickyNavigation">
-            <a className="stickyNavigationContent" href="/">
+            <a className="stickyNavigationContent" href="/password-generator/">
                 <img src={favicon} alt="Back to the Start" />
                 <h1>Password Generator</h1>
             </a>
