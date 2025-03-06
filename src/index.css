@@ -39,11 +39,11 @@ a:focus-visible {
 }
 
 a:hover {
-    opacity: 0.75;
+    background-color: rgb(63, 63, 63);
 }
 
 a:active {
-    opacity: 0.35;
+    opacity: 0.5;
 }
 
 button {
