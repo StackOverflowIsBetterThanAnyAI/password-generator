@@ -22,7 +22,7 @@ jobs:
                   node-version: 22
 
             - name: Install Dependencies
-              run: npm i
+              run: npm i --force
 
             - name: Build App
               run: npm run build
